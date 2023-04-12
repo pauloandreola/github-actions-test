@@ -1,0 +1,1 @@
+console.log("Hello world and GitHub Actions");
