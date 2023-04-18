@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: developer
-      url: 'teste01.com'
+      url: 'google.com'
     needs: build  
     steps:
       - name: Runa a one-line script
@@ -37,7 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: homologation
-      url: 'teste02.com'
+      url: 'dataside.com.br'
     needs: deploy-developer
     steps:
       - name: Runa a one-line script
@@ -47,7 +47,7 @@ jobs:
     runs-on: ubuntu-latest
     environment:
       name: production
-      url: 'teste03.com'
+      url: 'github.com'
     needs: deploy-homologation
     steps:
       - name: Runa a one-line script
