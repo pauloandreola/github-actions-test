@@ -1,0 +1,42 @@
+name: DemoNew GitHubAction
+
+on:
+  workflow_dispatch:
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Runa a one-line script
+        run: echo Build!
+        
+  deploy-developer:
+    runs-on: ubuntu-latest
+    environment:
+      name: developer
+      url: 'teste01.com'
+    needs: build  
+    steps:
+      - name: Runa a one-line script
+        run: echo Deploy Developer! 
+        
+  deploy-homologation:
+    runs-on: ubuntu-latest
+    environment:
+      name: homologation
+      url: 'teste02.com'
+    needs: deploy-developer
+    steps:
+      - name: Runa a one-line script
+        run: echo Deploy Homologation!
+        
+  deploy-production:
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: 'teste03.com'
+    needs: deploy-homologation
+    steps:
+      - name: Runa a one-line script
+        run: echo Deploy Production!         
+        
